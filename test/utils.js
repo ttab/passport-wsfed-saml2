@@ -1,7 +1,7 @@
-var xmlCrypto = require('xml-crypto'),
+var xmlCrypto = require('../lib/passport-wsfed-saml2/xml-crypto'),
     crypto = require('crypto'),
     xmldom = require('xmldom');
-    
+
 exports.isValidSignature = function(assertion, cert) {
   var doc = new xmldom.DOMParser().parseFromString(assertion);
   var signature = xmlCrypto.xpath.SelectNodes(doc, "/*/*[local-name(.)='Signature' and namespace-uri(.)='http://www.w3.org/2000/09/xmldsig#']")[0];

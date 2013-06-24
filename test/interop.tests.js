@@ -7,7 +7,7 @@ var assert = require('assert'),
     SamlPassport = require('../lib/passport-wsfed-saml2/saml').SAML;
 
 var Parser = require('xmldom').DOMParser,
-    SignedXml = require('xml-crypto').SignedXml;
+    SignedXml = require('../lib/passport-wsfed-saml2/xml-crypto').SignedXml;
 
 describe('saml 1.1 assertion', function () {
 
@@ -35,13 +35,13 @@ describe('saml 1.1 assertion', function () {
   //   //                 'http://www.w3.org/2000/09/xmldsig#sha1');
 
   //   // sig.signingKey = fs.readFileSync(__dirname + '/test-auth0.key');
-    
+
   //   // sig.keyInfoProvider = {
   //   //   getKeyInfo: function () {
   //   //     return "<X509Data><X509Certificate>" + fs.readFileSync(__dirname + '/test-auth0.cer') + "</X509Certificate></X509Data>";
   //   //   }
   //   // };
-  //   // sig.computeSignature(SAMLResponse); 
+  //   // sig.computeSignature(SAMLResponse);
   //   // SAMLResponse = sig.getSignedXml();
 
   //   //console.log(SAMLResponse)
